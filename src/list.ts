@@ -9,14 +9,10 @@ interface Result {
 export async function main(event: any, context: Context) {
   const params = {
     TableName: process.env.tableName,
-    KeyConditionExpression: 'userId = :userId',
-    ExpressionAttributeValues: {
-      ':userId': event.requestContext.identity.cognitoIdentityId,
-    },
   };
 
   try {
-    const result = await dynamoDbLib.call('query', params) as Result;
+    const result = (await dynamoDbLib.call('scan', params)) as Result;
     return success(result.Items);
   } catch (e) {
     console.log(e);
