@@ -1,5 +1,5 @@
 {
-  "body": "{\"content\":\"hello world\", \"title\":\"Test2\"}",
+  "body": "{\"content\":\"hello world\", \"title\":\"Test3\", \"tag\":\"typescript\", \"desc\":\"This is desc\"}",
   "requestContext": {
     "identity": {
       "cognitoIdentityId": "USER-SUB-1234"

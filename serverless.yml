@@ -1,5 +1,5 @@
 # NOTE: update this with your service name
-service: eun-app-api
+service: uzilog-app-api
 
 # Create an optimized package for our functions
 package:
@@ -34,7 +34,7 @@ functions:
     handler: src/create.main
     events:
       - http:
-          path: eun
+          path: uzilog
           method: post
           cors: true
           authorizer: aws_iam
@@ -48,7 +48,6 @@ functions:
           path: uzilog/{id}
           method: get
           cors: true
-          authorizer: aws_iam
   list:
     handler: src/list.main
     events:
@@ -56,7 +55,6 @@ functions:
           path: uzilog
           method: get
           cors: true
-          authorizer: aws_iam
   update:
     handler: src/update.main
     events:

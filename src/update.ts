@@ -7,12 +7,14 @@ export async function main(event: any, context: Context) {
   const params = {
     TableName: process.env.tableName,
     Key: {
-      userId: event.requestContext.identity.cognitoIdentityId,
-      analysisId: event.pathParameters.id,
+      postId: event.pathParameters.id,
     },
     UpdateExpression: 'SET content = :content',
     ExpressionAttributeValues: {
       ':content': data.content || null,
+      ':title': data.title || null,
+      ':desc': data.decs || null,
+      ':tag': data.tag || null,
     },
     ReturnValues: 'ALL_NEW',
   };
