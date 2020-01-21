@@ -9,12 +9,15 @@ export async function main(event: any, context: Context) {
     Key: {
       postId: event.pathParameters.id,
     },
-    UpdateExpression: 'SET content = :content SET title = :title SET desc = :desc SET tag = :tag',
+    UpdateExpression: 'SET content = :content, title = :title, #d = :desc, tag = :tag',
     ExpressionAttributeValues: {
       ':content': data.content || null,
       ':title': data.title || null,
       ':desc': data.desc || null,
       ':tag': data.tag || null,
+    },
+    ExpressionAttributeNames: {
+      '#d': 'desc',
     },
     ReturnValues: 'ALL_NEW',
   };

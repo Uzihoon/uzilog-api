@@ -1,6 +1,6 @@
 {
-  "body": "{\"content\":\"new world\"}",
+  "body": "{\"content\":\"new world\",\"title\": \"[UZILOG] 00. 개발 환경 준비\",\"tag\": \"programming\",\"desc\": \"UZILOG 개발기\"}",
   "pathParameters": {
-    "id": "8e5a9f70-328e-11ea-8861-e5f06e03632f"
+    "id": "6bf62d80-3c4f-11ea-81e9-91d858e1a67e"
   }
 }
